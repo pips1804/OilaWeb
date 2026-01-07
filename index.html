@@ -195,22 +195,46 @@
         height: 100%;
       }
 
+      /* UPDATED CSS FOR 3-BOTTLE LAYOUT */
       .product-image-container {
         position: relative;
         width: auto;
         height: auto;
         display: flex;
+        /* Align items at the bottom so they sit on the same plane */
+        align-items: flex-end;
         justify-content: center;
         animation: floatProduct 4s ease-in-out infinite;
       }
 
-      .hero-bottle-img {
+      /* Style for the smaller side bottles */
+      .hero-bottle-small {
         width: auto;
-        max-height: 85vh;
-        max-width: 100%;
+        height: 60vh; /* Smaller height */
         object-fit: contain;
         filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.3));
+        /* Add negative margins to create overlap */
+        margin-right: -60px;
+        z-index: 1;
       }
+
+      /* Style for the main, larger middle bottle */
+      .hero-bottle-main {
+        width: auto;
+        height: 80vh; /* Larger height */
+        object-fit: contain;
+        filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.3));
+        z-index: 2; /* Ensure it's in front */
+        margin-left: -60px;
+        margin-right: -60px;
+      }
+
+      /* Target the last bottle to fix its margin */
+      .hero-bottle-small:last-child {
+        margin-right: 0;
+        margin-left: -60px;
+      }
+      /* -------------------------------------------------- */
 
       .hero h1 {
         font-size: 5.5rem;
@@ -733,9 +757,22 @@
         .hero-text-side {
           padding-right: 0;
         }
-        .hero-bottle-img {
-          max-height: 50vh;
+
+        /* MOBILE BOTTLE STYLES */
+        .product-image-container {
+          display: block; /* Reset from flex */
         }
+        /* Hide the side bottles on mobile */
+        .hero-bottle-small {
+          display: none;
+        }
+        /* Make the main bottle smaller for mobile */
+        .hero-bottle-main {
+          max-height: 40vh;
+          margin: 0; /* Reset margins */
+        }
+        /* ---------------------- */
+
         .hero h1 {
           font-size: 2.8rem;
         }
@@ -820,7 +857,7 @@
       <div id="bubbles-container"></div>
       <div class="hero-content hidden">
         <div class="hero-text-side">
-          <h1>Tough on Grease,<br />Gentle on Planet.</h1>
+          <h1>From Grease<br />To Ease.</h1>
           <p>Clean smarter. Clean greener. Clean with OILA.</p>
           <br />
           <a href="#about" class="btn-cta">Discover Oila</a>
@@ -830,7 +867,17 @@
             <img
               src="img/product.png"
               alt="Oila Dishwashing Liquid"
-              class="hero-bottle-img"
+              class="hero-bottle-small"
+            />
+            <img
+              src="img/product.png"
+              alt="Oila Dishwashing Liquid"
+              class="hero-bottle-main"
+            />
+            <img
+              src="img/product.png"
+              alt="Oila Dishwashing Liquid"
+              class="hero-bottle-small"
             />
           </div>
         </div>
@@ -1000,7 +1047,7 @@
         </p>
         <div class="map-wrapper hidden">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.7082441049574!2d121.00321207589641!3d14.558669578100293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c973c52fa56f%3A0xe899b20f3e85b0ab!2sCash%20%26%20Carry%20Mall!5e0!3m2!1sen!2sph!4v1767749468715!5m2!1sen!2sph"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.7082441049574!2d121.00321207589641!3d14.558669578100293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c973c52fa56f%3A0xe899b20f3e85b0ab!2sCash%20%26%20Carry%20Mall!5e0!3m2!1sen!2sph!4v1767763751065!5m2!1sen!2sph"
             width="600"
             height="450"
             style="border: 0"
@@ -1113,7 +1160,7 @@
                   d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
                 ></path>
               </svg>
-              /OILAMOFFICIAL
+              OILAOFFICIAL
             </div>
             <div class="contact-item">
               <svg class="icon-svg" viewBox="0 0 24 24">
@@ -1140,7 +1187,7 @@
             </div>
           </div>
         </div>
-        <p class="copyright">© 2023 Oila Inc. All rights reserved.</p>
+        <p class="copyright">© 2025 Renuva. All rights reserved.</p>
       </div>
     </footer>
 
