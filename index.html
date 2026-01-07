@@ -13,7 +13,6 @@
     <style>
       /* --- CSS VARIABLES & RESET --- */
       :root {
-        /* Palette inspired by the Oila Poster */
         --color-green-dark: #006837;
         --color-green-fresh: #5a8f46;
         --color-yellow-bright: #f2e750;
@@ -21,10 +20,11 @@
         --color-white: #ffffff;
         --color-off-white: #f9fcf8;
         --color-text: #333333;
+        --color-light-gray: #e0e0e0;
 
         --font-main: "Poppins", sans-serif;
         --transition-speed: 0.3s;
-        --section-spacing: 100px;
+        --section-spacing: 80px;
       }
 
       * {
@@ -43,9 +43,6 @@
         color: var(--color-text);
         overflow-x: hidden;
         line-height: 1.6;
-
-        /* --- REST OF SITE BACKGROUND (Subtle Pattern) --- */
-        /* This applies to everything EXCEPT the hero */
         background-image: linear-gradient(
             rgba(249, 252, 248, 0.9),
             rgba(249, 252, 248, 0.9)
@@ -162,16 +159,11 @@
         justify-content: center;
         overflow: hidden;
         padding-top: 80px;
-
-        /* --- DESKTOP HERO BACKGROUND + WHITE OVERLAY --- */
-        /* The rgba(255, 255, 255, 0.75) creates the white overlay.
-           0.75 is the opacity (0 is transparent, 1 is solid white). */
         background: linear-gradient(
             rgba(255, 255, 255, 0.75),
             rgba(255, 255, 255, 0.75)
           ),
-          url("img/bg-desktop.png"); /* REPLACE WITH YOUR IMAGE */
-
+          url("img/bg-desktop.png"); /* Desktop BG */
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -184,7 +176,7 @@
         gap: 20px;
         z-index: 2;
         padding: 20px;
-        max-width: 1300px;
+        max-width: 1600px;
         width: 100%;
         text-align: left;
       }
@@ -221,13 +213,12 @@
       }
 
       .hero h1 {
-        font-size: 4rem;
+        font-size: 5.5rem;
         font-weight: 800;
         line-height: 1.1;
         margin-bottom: 25px;
         text-transform: uppercase;
         font-style: italic;
-
         background: linear-gradient(
           to bottom,
           var(--color-green-dark) 0%,
@@ -237,26 +228,20 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
-
         filter: drop-shadow(0px 2px 0px rgba(0, 0, 0, 0.1));
       }
 
       .hero p {
-        font-size: 1.2rem;
+        font-size: 1.6rem;
         color: var(--color-green-dark);
         font-weight: 600;
         margin-bottom: 40px;
         display: inline-block;
-
-        /* Optional: Add extra background to text just in case */
-        /* background: rgba(255,255,255,0.6);
-           padding: 5px 15px;
-           border-radius: 20px; */
       }
 
       .btn-cta {
         display: inline-block;
-        padding: 15px 40px;
+        padding: 20px 50px;
         background: linear-gradient(
           to right,
           var(--color-green-fresh),
@@ -266,10 +251,11 @@
         text-decoration: none;
         border-radius: 50px;
         font-weight: 700;
-        font-size: 1.1rem;
+        font-size: 1.3rem;
         transition: all 0.3s;
         box-shadow: 0 10px 20px rgba(0, 104, 55, 0.2);
         border: 2px solid var(--color-yellow-bright);
+        cursor: pointer;
       }
 
       .btn-cta:hover {
@@ -282,6 +268,26 @@
         );
       }
 
+      .btn-secondary {
+        display: inline-block;
+        padding: 10px 25px;
+        background: transparent;
+        color: var(--color-green-dark);
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 600;
+        border: 2px solid var(--color-green-dark);
+        transition: all 0.3s;
+        margin-top: 20px;
+        cursor: pointer;
+      }
+
+      .btn-secondary:hover {
+        background: var(--color-green-dark);
+        color: white;
+      }
+
+      /* --- BUBBLES --- */
       .bubble {
         position: absolute;
         background: radial-gradient(
@@ -305,20 +311,6 @@
         overflow: hidden;
       }
 
-      #about::before {
-        content: "";
-        position: absolute;
-        top: -50px;
-        right: -50px;
-        width: 200px;
-        height: 200px;
-        background: var(--color-yellow-bright);
-        opacity: 0.1;
-        border-radius: 50%;
-        filter: blur(50px);
-        z-index: -1;
-      }
-
       .about-content {
         display: flex;
         align-items: center;
@@ -331,24 +323,24 @@
 
       .about-text h3 {
         color: var(--color-green-fresh);
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
         font-size: 1.8rem;
       }
 
       .about-text p {
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.2rem;
         font-size: 1.05rem;
       }
 
-      .poster-points {
+      .key-benefits-list {
         list-style: none;
-        margin-top: 30px;
+        margin-top: 20px;
       }
 
-      .poster-points li {
+      .key-benefits-list li {
         display: flex;
         align-items: center;
-        margin-bottom: 15px;
+        margin-bottom: 12px;
         font-weight: 600;
         color: var(--color-green-dark);
         font-size: 1.1rem;
@@ -358,13 +350,14 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 30px;
-        height: 30px;
+        width: 25px;
+        height: 25px;
         background-color: var(--color-green-fresh);
         color: white;
         border-radius: 50%;
         margin-right: 15px;
         font-weight: bold;
+        font-size: 0.8rem;
         box-shadow: 0 4px 10px rgba(90, 143, 70, 0.3);
       }
 
@@ -381,201 +374,91 @@
         z-index: 2;
       }
 
-      .about-visual::after {
-        content: "";
-        position: absolute;
-        bottom: -30px;
-        left: -30px;
-        width: 150px;
-        height: 150px;
-        background: var(--color-yellow-bright);
-        border-radius: 50%;
-        z-index: 1;
-        opacity: 0.3;
-      }
-
-      /* --- TEAM SECTION --- */
-      #team {
-        padding: var(--section-spacing) 0;
-        /* Made background slightly transparent to let main BG show through slightly */
-        background: linear-gradient(
-          to bottom,
-          rgba(255, 255, 255, 0.9),
-          rgba(240, 247, 237, 0.9)
-        );
-      }
-
-      .team-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 40px;
-        justify-content: center;
-        perspective: 1000px;
-      }
-
-      .team-card-container {
-        width: 100%;
-        height: 380px;
-        cursor: pointer;
-        position: relative;
-      }
-
-      .team-card-inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        transform-style: preserve-3d;
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      }
-
-      .team-card-container:hover .team-card-inner {
-        box-shadow: 0 15px 40px rgba(90, 143, 70, 0.15);
-      }
-
-      .team-card-inner.is-flipped {
-        transform: rotateY(180deg);
-      }
-
-      .team-card-front,
-      .team-card-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        border-radius: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 30px 20px;
-        overflow: hidden;
-      }
-
-      .team-card-front {
-        background: var(--color-white);
-        border: 2px solid var(--color-off-white);
-      }
-
-      .team-card-front::before {
-        content: "";
-        position: absolute;
-        top: 0;
+      /* --- MODAL STYLES --- */
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed;
+        z-index: 2000;
         left: 0;
-        right: 0;
-        bottom: 0;
-        opacity: 0.03;
-        background-image: url("https://www.transparenttextures.com/patterns/leaf.png");
-        z-index: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(5px);
+        animation: fadeIn 0.3s;
       }
 
-      .member-img-wrapper {
+      .modal-content {
+        background-color: #fefefe;
+        margin: 10% auto;
+        padding: 40px;
+        border: 2px solid var(--color-green-fresh);
+        width: 90%;
+        max-width: 600px;
+        border-radius: 15px;
         position: relative;
-        z-index: 1;
-        margin-bottom: 25px;
+        box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+        animation: slideDown 0.3s;
       }
 
-      .member-img {
-        width: 130px;
-        height: 130px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 4px solid var(--color-yellow-bright);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      .close-modal {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        right: 25px;
       }
 
-      .member-info {
-        position: relative;
-        z-index: 1;
-      }
-
-      .member-name {
-        font-size: 1.4rem;
+      .close-modal:hover {
         color: var(--color-green-dark);
-        font-weight: 700;
-        margin-bottom: 5px;
       }
 
-      .member-role {
-        color: var(--color-green-fresh);
-        font-size: 1rem;
-        font-weight: 600;
+      .ingredient-list {
+        list-style: none;
+        padding-left: 0;
       }
 
-      .tap-hint {
-        margin-top: auto;
-        font-size: 0.85rem;
-        color: #999;
+      .ingredient-list li {
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+        color: var(--color-text);
         display: flex;
         align-items: center;
-        gap: 5px;
       }
-
-      .tap-icon {
-        font-size: 1.2rem;
+      .ingredient-list li::before {
+        content: "•";
         color: var(--color-yellow-warm);
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
       }
 
-      .team-card-back {
-        background: linear-gradient(
-          135deg,
-          var(--color-green-fresh),
-          var(--color-green-dark)
-        );
+      /* --- PARTNERS SECTION --- */
+      #partners {
+        padding: var(--section-spacing) 0;
+        background-color: var(--color-green-dark);
         color: white;
-        transform: rotateY(180deg);
-        padding: 40px 30px;
+        text-align: center;
       }
 
-      .back-content {
-        position: relative;
-        z-index: 1;
-      }
-
-      .team-card-back::after {
-        content: "";
-        position: absolute;
-        width: 100px;
-        height: 100px;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 50%;
-        top: -30px;
-        left: -30px;
-      }
-
-      .team-card-back h4 {
-        font-size: 1.3rem;
-        margin-bottom: 20px;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 1px;
+      #partners h2 {
         color: var(--color-yellow-bright);
+        margin-bottom: 20px;
       }
 
-      .team-card-back p {
-        font-size: 1.05rem;
-        line-height: 1.7;
-        font-weight: 500;
+      .partner-content {
+        max-width: 800px;
+        margin: 0 auto;
       }
 
-      /* --- HOW TO USE --- */
+      /* --- USAGE SECTION --- */
       #usage {
         padding: var(--section-spacing) 0;
-        position: relative;
-      }
-
-      #usage::before {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 50%;
-        background: linear-gradient(to top, #f0f7ed, transparent);
-        z-index: -1;
       }
 
       .steps-container {
@@ -637,15 +520,80 @@
         flex-direction: column;
       }
 
-      .step-card h4 {
-        color: var(--color-green-dark);
-        margin-bottom: 10px;
-        font-size: 1.2rem;
+      /* --- MAP SECTION --- */
+      #location {
+        padding: var(--section-spacing) 0;
+        background-color: #f4f4f4;
+      }
+      .map-wrapper {
+        width: 100%;
+        height: 400px;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+      .map-wrapper iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
       }
 
-      .step-card p {
-        font-size: 0.95rem;
+      /* --- FAQ SECTION --- */
+      #faq {
+        padding: var(--section-spacing) 0;
+      }
+
+      .faq-container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .faq-item {
+        background-color: var(--color-white);
+        margin-bottom: 15px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+      }
+
+      .faq-question {
+        padding: 20px;
+        width: 100%;
+        text-align: left;
+        border: none;
+        background: none;
+        outline: none;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--color-green-dark);
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .faq-question::after {
+        content: "+";
+        font-size: 1.5rem;
+        color: var(--color-yellow-warm);
+        transition: transform 0.3s;
+      }
+
+      .faq-question.active::after {
+        transform: rotate(45deg);
+      }
+
+      .faq-answer {
+        padding: 0 20px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out, padding 0.3s;
+        background-color: #fafafa;
         color: var(--color-text);
+      }
+
+      .faq-question.active + .faq-answer {
+        padding: 20px;
       }
 
       /* --- FOOTER --- */
@@ -684,8 +632,19 @@
         font-weight: 500;
       }
 
-      .contact-icon {
-        color: var(--color-yellow-bright);
+      /* SVG Icon Styles */
+      .icon-svg {
+        width: 24px;
+        height: 24px;
+        fill: var(--color-yellow-bright);
+      }
+
+      .brand-about {
+        max-width: 600px;
+        margin: 0 auto 30px;
+        font-size: 0.9rem;
+        opacity: 0.9;
+        line-height: 1.5;
       }
 
       .copyright {
@@ -722,6 +681,26 @@
         }
       }
 
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideDown {
+        from {
+          transform: translateY(-50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
       /* --- MEDIA QUERIES --- */
       @media (max-width: 900px) {
         .steps-container {
@@ -730,28 +709,22 @@
       }
 
       @media (max-width: 768px) {
-        /* --- MOBILE HERO BACKGROUND + OVERLAY --- */
         .hero {
-          /* Switch to mobile image, keep the overlay */
           background: linear-gradient(
               rgba(255, 255, 255, 0.75),
               rgba(255, 255, 255, 0.75)
             ),
-            url("img/bg-mobile.png"); /* REPLACE WITH MOBILE IMAGE */
-
+            url("img/bg-mobile.png");
           background-size: cover;
           background-position: center;
-          background-repeat: no-repeat;
         }
-        /* ---------------------------------------- */
 
         .section-title {
           font-size: 2rem;
         }
 
-        /* Reset Hero to Column on Mobile */
         .hero-content {
-          flex-direction: column-reverse; /* Image on top, Text bottom */
+          flex-direction: column-reverse;
           text-align: center;
           gap: 30px;
           padding-top: 40px;
@@ -760,14 +733,18 @@
         .hero-text-side {
           padding-right: 0;
         }
-
-        /* Adjust image size on mobile so it's not TOO big */
         .hero-bottle-img {
           max-height: 50vh;
         }
-
         .hero h1 {
           font-size: 2.8rem;
+        }
+        .hero p {
+          font-size: 1.1rem;
+        }
+        .btn-cta {
+          padding: 15px 40px;
+          font-size: 1.1rem;
         }
 
         .nav-links {
@@ -789,7 +766,6 @@
         .nav-links.nav-active {
           transform: translateY(0%);
         }
-
         .hamburger {
           display: flex;
         }
@@ -804,15 +780,10 @@
           max-width: 400px;
         }
 
-        .team-grid {
-          padding: 0 10px;
-        }
-
         .steps-container {
           grid-template-columns: 1fr;
           gap: 30px;
         }
-
         .contact-info {
           flex-direction: column;
           gap: 15px;
@@ -830,9 +801,11 @@
 
           <ul class="nav-links">
             <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <!-- <li><a href="#team">Our Team</a></li> -->
+            <li><a href="#about">Product</a></li>
+            <li><a href="#partners">Partners</a></li>
             <li><a href="#usage">How to Use</a></li>
+            <li><a href="#location">Find Us</a></li>
+            <li><a href="#faq">FAQs</a></li>
           </ul>
           <div class="hamburger">
             <div class="bar"></div>
@@ -845,15 +818,13 @@
 
     <section id="home" class="hero">
       <div id="bubbles-container"></div>
-
       <div class="hero-content hidden">
         <div class="hero-text-side">
           <h1>Tough on Grease,<br />Gentle on Planet.</h1>
           <p>Clean smarter. Clean greener. Clean with OILA.</p>
           <br />
-          <a href="#about" class="btn-cta">Experience the Freshness</a>
+          <a href="#about" class="btn-cta">Discover Oila</a>
         </div>
-
         <div class="hero-image-side">
           <div class="product-image-container">
             <img
@@ -868,7 +839,7 @@
 
     <section id="about">
       <div class="container">
-        <div class="section-title hidden">Why Choose Oila?</div>
+        <div class="section-title hidden">Product Overview</div>
         <div class="about-content">
           <div class="about-visual hidden">
             <img
@@ -877,44 +848,74 @@
             />
           </div>
           <div class="about-text hidden">
-            <h3>Nature's Power, Bottled.</h3>
+            <h3>Why Choose Oila?</h3>
             <p>
-              Oila disrupts the chemical-heavy market by returning to nature.
-              Our unique formula harnesses the power of natural citrus extracts
-              to cut through stubborn grease instantly, without harsh sulfates.
+              Oila is an eco-friendly and affordable dishwashing liquid
+              developed for B2B use. It delivers strong grease-cutting
+              performance while supporting environmentally responsible cleaning
+              practices.
             </p>
             <p>
-              We believe cleaning shouldn't cost the earth. That's why Oila is
-              biodegradable and designed for the modern, eco-conscious home.
+              Designed for businesses that require effective cleaning at a
+              manageable cost, its formulation is perfect for high-use kitchen
+              environments.
             </p>
 
-            <ul class="poster-points">
+            <h4 style="color: var(--color-green-dark); margin-top: 20px">
+              Key Benefits
+            </h4>
+            <ul class="key-benefits-list">
               <li>
-                <span class="check-icon">✓</span> Safe to Use on all dishware.
+                <span class="check-icon">✓</span> Strong grease-cutting power
               </li>
               <li>
-                <span class="check-icon">✓</span> Purified with Activated
-                Charcoal for a deeper clean.
+                <span class="check-icon">✓</span> Affordable for daily business
+                use
               </li>
               <li>
-                <span class="check-icon">✓</span> 100% Eco-Friendly Formula.
+                <span class="check-icon">✓</span> Eco-friendly formulation
+              </li>
+              <li>
+                <span class="check-icon">✓</span> Consistent quality for food
+                businesses
               </li>
             </ul>
+
+            <button id="openIngredients" class="btn-secondary">
+              View Ingredients
+            </button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- <section id="team">
-      <div class="container">
-        <div class="section-title hidden">Meet The Innovators</div>
-        <div class="team-grid" id="team-grid"></div>
+    <div id="ingredientsModal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">×</span>
+        <h3 style="color: var(--color-green-dark); margin-bottom: 20px">
+          Ingredients List
+        </h3>
+        <ul class="ingredient-list">
+          <li>Used cooking oil (filtered)</li>
+          <li>Activated Charcoal</li>
+          <li>Potassium hydroxide (KOH)</li>
+          <li>Water (for KOH solution)</li>
+          <li>SLES (Sodium Laureth Sulfate)</li>
+          <li>Coco Betaine</li>
+          <li>Sodium Silicate</li>
+          <li>Salt (dissolved in water)</li>
+          <li>Sodium Benzoate</li>
+          <li>Potassium Sorbate</li>
+          <li>Lemon Fragrance Oil</li>
+          <li>Yellow Color</li>
+          <li>Extra water</li>
+        </ul>
       </div>
-    </section> -->
+    </div>
 
     <section id="usage">
       <div class="container">
-        <div class="section-title hidden">Simple Steps to Sparkle</div>
+        <div class="section-title hidden">Directions to Use</div>
         <div class="steps-container">
           <div class="step-card hidden">
             <div class="step-img-wrapper">
@@ -929,22 +930,20 @@
               </p>
             </div>
           </div>
-
           <div class="step-card hidden" style="transition-delay: 0.1s">
             <div class="step-img-wrapper">
               <div class="step-number-badge">2</div>
-              <img src="img/step2.png" alt="Dispense Soap" />
+              <img src="img/step2.png" alt="Squeeze" />
             </div>
             <div class="step-content">
               <h4>Squeeze</h4>
               <p>Squeeze the sponge to activate the soap and create foam.</p>
             </div>
           </div>
-
           <div class="step-card hidden" style="transition-delay: 0.2s">
             <div class="step-img-wrapper">
               <div class="step-number-badge">3</div>
-              <img src="img/step3.png" alt="Lather and Wash" />
+              <img src="img/step3.png" alt="Scrub" />
             </div>
             <div class="step-content">
               <h4>Scrub</h4>
@@ -954,11 +953,10 @@
               </p>
             </div>
           </div>
-
           <div class="step-card hidden" style="transition-delay: 0.3s">
             <div class="step-img-wrapper">
               <div class="step-number-badge">4</div>
-              <img src="img/step4.png" alt="Rinse Dishes" />
+              <img src="img/step4.png" alt="Rinse" />
             </div>
             <div class="step-content">
               <h4>Rinse</h4>
@@ -972,127 +970,222 @@
       </div>
     </section>
 
-    <footer>
+    <section id="partners">
       <div class="container">
-        <div class="footer-content">
-          <a href="#home" class="footer-logo">Oila.</a>
-          <p style="margin-bottom: 20px; font-size: 1.1rem">
-            Clean smarter. Clean greener.
+        <div class="partner-content hidden">
+          <h2>For Business Partners</h2>
+          <p style="margin-bottom: 20px">
+            Oila is available for B2B distribution and resale. It is suitable
+            for partners supplying food stalls and retail outlets.
           </p>
+          <a
+            href="#footer"
+            class="btn-cta"
+            style="
+              background: white;
+              color: var(--color-green-dark);
+              border: none;
+            "
+            >Partner With Us</a
+          >
+        </div>
+      </div>
+    </section>
 
-          <div class="contact-info">
-            <div class="contact-item">
-              <span class="contact-icon">f</span> /OILAMOFFICIAL
+    <section id="location">
+      <div class="container">
+        <div class="section-title hidden">Where to Find Us</div>
+        <p style="text-align: center; margin-bottom: 20px">
+          Available at Cash & Carry Supermarket
+        </p>
+        <div class="map-wrapper hidden">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.7082441049574!2d121.00321207589641!3d14.558669578100293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c973c52fa56f%3A0xe899b20f3e85b0ab!2sCash%20%26%20Carry%20Mall!5e0!3m2!1sen!2sph!4v1767749468715!5m2!1sen!2sph"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-title hidden">Frequently Asked Questions</div>
+        <div class="faq-container">
+          <div class="faq-item hidden">
+            <button class="faq-question">What is Oila?</button>
+            <div class="faq-answer">
+              <p>
+                Oila is an affordable, eco-conscious dishwashing liquid
+                developed by Renuva, designed for reliable performance in
+                commercial and retail settings.
+              </p>
             </div>
-            <div class="contact-item">
-              <span class="contact-icon">✉</span> renuva.oila@gmail.com
+          </div>
+
+          <div class="faq-item hidden">
+            <button class="faq-question">Who is Oila for?</button>
+            <div class="faq-answer">
+              <p>
+                Oila is ideal for food stalls, small eateries, and retail buyers
+                looking for a cost-effective yet efficient dishwashing solution.
+              </p>
             </div>
-            <div class="contact-item">
-              <span class="contact-icon">📞</span> +639457920295
+          </div>
+
+          <div class="faq-item hidden">
+            <button class="faq-question">
+              Is Oila effective against grease?
+            </button>
+            <div class="faq-answer">
+              <p>
+                Yes. Oila is formulated with strong grease-cutting power, making
+                it suitable for daily, high-use kitchen environments.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item hidden">
+            <button class="faq-question">Is Oila eco-friendly?</button>
+            <div class="faq-answer">
+              <p>
+                Yes. Oila is developed with eco-conscious principles, helping
+                reduce unnecessary chemical use while maintaining cleaning
+                efficiency.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item hidden">
+            <button class="faq-question">
+              What size is Oila available in?
+            </button>
+            <div class="faq-answer">
+              <p>Oila is currently available in 250 ml packaging.</p>
+            </div>
+          </div>
+
+          <div class="faq-item hidden">
+            <button class="faq-question">Can Oila be resold?</button>
+            <div class="faq-answer">
+              <p>
+                Yes. Oila is available for B2B resale and distribution. You may
+                contact Renuva through our channels to discuss reseller
+                opportunities.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item hidden">
+            <button class="faq-question">Who manufactures Oila?</button>
+            <div class="faq-answer">
+              <p>
+                Oila is manufactured and managed by Renuva, ensuring consistent
+                quality and supply.
+              </p>
             </div>
           </div>
         </div>
-        <p class="copyright">&copy; 2023 Oila Inc. All rights reserved.</p>
+      </div>
+    </section>
+
+    <footer id="footer">
+      <div class="container">
+        <div class="footer-content">
+          <a href="#home" class="footer-logo">Oila.</a>
+
+          <div class="brand-about">
+            <p><strong>About the Brand</strong></p>
+            <p>
+              Oila is part of Renuva’s household product portfolio, developed to
+              support eco-friendly and affordable cleaning solutions.
+            </p>
+          </div>
+
+          <div class="contact-info">
+            <div class="contact-item">
+              <svg class="icon-svg" viewBox="0 0 24 24">
+                <path
+                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                ></path>
+              </svg>
+              /OILAMOFFICIAL
+            </div>
+            <div class="contact-item">
+              <svg class="icon-svg" viewBox="0 0 24 24">
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                ></path>
+                <polyline
+                  points="22,6 12,13 2,6"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  style="stroke: var(--color-yellow-bright)"
+                ></polyline>
+              </svg>
+              renuva.oila@gmail.com
+            </div>
+            <div class="contact-item">
+              <svg class="icon-svg" viewBox="0 0 24 24">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                ></path>
+              </svg>
+              +639457920295
+            </div>
+          </div>
+        </div>
+        <p class="copyright">© 2023 Oila Inc. All rights reserved.</p>
       </div>
     </footer>
 
     <script>
-      // --- 1. TEAM DATA GENERATION (Professional Cards) ---
-      //   const teamMembers = [
-      //     {
-      //       name: "Flores, Kirby Jhey S.",
-      //       role: "Chief Executive Officer (CEO)",
-      //       responsibility:
-      //         "Leads overall strategic direction and vision for sustainable growth.",
-      //     },
-      //     {
-      //       name: "Metoda, Arah Grace B.",
-      //       role: "Executive Vice President (EVP)",
-      //       responsibility:
-      //         "Oversees daily operations and ensures cross-departmental synergy.",
-      //     },
-      //     {
-      //       name: "Regio, Mariel Nicole B.",
-      //       role: "R&D Manager",
-      //       responsibility:
-      //         "Innovates our eco-friendly formula using activated charcoal technology.",
-      //     },
-      //     {
-      //       name: "Formaran, Russell Andrei S.",
-      //       role: "Marketing & Sales Manager",
-      //       responsibility:
-      //         "Drives brand awareness and connects Oila with eco-conscious consumers.",
-      //     },
-      //     {
-      //       name: "Rasola, Jasmine P.",
-      //       role: "Finance & Accounting Manager",
-      //       responsibility:
-      //         "Manages financial health to ensure sustainable business practices.",
-      //     },
-      //     {
-      //       name: "Cunanan, Uriel H.",
-      //       role: "Operations Manager",
-      //       responsibility:
-      //         "Ensures efficient and quality-controlled production processes.",
-      //     },
-      //     {
-      //       name: "Lirio, Jaimelyn G.",
-      //       role: "Supply Chain Manager",
-      //       responsibility:
-      //         "Sourcing ethical materials and managing green logistics.",
-      //     },
-      //   ];
+      // --- 1. MODAL LOGIC ---
+      const modal = document.getElementById("ingredientsModal");
+      const btn = document.getElementById("openIngredients");
+      const span = document.getElementsByClassName("close-modal")[0];
 
-      //   const teamGrid = document.getElementById("team-grid");
+      // Open Modal
+      btn.onclick = function () {
+        modal.style.display = "block";
+      };
 
-      //   teamMembers.forEach((member, index) => {
-      //     const avatarImages = [
-      //       "https://i.pravatar.cc/300?img=12",
-      //       "https://i.pravatar.cc/300?img=47",
-      //       "https://i.pravatar.cc/300?img=45",
-      //       "https://i.pravatar.cc/300?img=59",
-      //       "https://i.pravatar.cc/300?img=38",
-      //       "https://i.pravatar.cc/300?img=53",
-      //       "https://i.pravatar.cc/300?img=35",
-      //     ];
+      // Close Modal
+      span.onclick = function () {
+        modal.style.display = "none";
+      };
 
-      //     const cardHTML = `
-      //             <div class="team-card-container">
-      //                 <div class="team-card-inner">
-      //                     <div class="team-card-front">
-      //                         <div class="member-img-wrapper">
-      //                             <img src="${avatarImages[index]}" alt="${member.name}" class="member-img">
-      //                         </div>
-      //                         <div class="member-info">
-      //                             <div class="member-name">${member.name}</div>
-      //                             <div class="member-role">${member.role}</div>
-      //                         </div>
-      //                          <div class="tap-hint">
-      //                             <span class="tap-icon">↻</span> Tap for details
-      //                         </div>
-      //                     </div>
-      //                     <div class="team-card-back">
-      //                         <div class="back-content">
-      //                             <h4>Responsibilities</h4>
-      //                             <p>${member.responsibility}</p>
-      //                         </div>
-      //                     </div>
-      //                 </div>
-      //             </div>
-      //         `;
-      //     teamGrid.innerHTML += cardHTML;
-      //   });
+      // Close if clicked outside
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
 
-      //   // --- 2. CARD FLIP INTERACTION ---
-      //   teamGrid.addEventListener("click", function (e) {
-      //     const cardContainer = e.target.closest(".team-card-container");
-      //     if (cardContainer) {
-      //       const inner = cardContainer.querySelector(".team-card-inner");
-      //       inner.classList.toggle("is-flipped");
-      //     }
-      //   });
+      // --- 2. FAQ ACCORDION LOGIC ---
+      const faqQuestions = document.querySelectorAll(".faq-question");
 
-      // --- 3. MOBILE MENU TOGGLE ---
+      faqQuestions.forEach((question) => {
+        question.addEventListener("click", () => {
+          // Toggle active class on the question
+          question.classList.toggle("active");
+
+          // Toggle max-height on the answer div
+          const answer = question.nextElementSibling;
+          if (question.classList.contains("active")) {
+            answer.style.maxHeight = answer.scrollHeight + "px";
+          } else {
+            answer.style.maxHeight = 0;
+          }
+        });
+      });
+
+      // --- 3. MOBILE MENU ---
       const hamburger = document.querySelector(".hamburger");
       const navLinks = document.querySelector(".nav-links");
       const links = document.querySelectorAll(".nav-links li a");
@@ -1108,10 +1201,7 @@
       });
 
       // --- 4. SCROLL ANIMATIONS ---
-      const observerOptions = {
-        threshold: 0.2,
-      };
-
+      const observerOptions = { threshold: 0.2 };
       const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -1124,9 +1214,8 @@
       const hiddenElements = document.querySelectorAll(".hidden");
       hiddenElements.forEach((el) => observer.observe(el));
 
-      // --- 5. BUBBLES GENERATOR ---
+      // --- 5. BUBBLES ---
       const bubblesContainer = document.getElementById("bubbles-container");
-
       function createBubble() {
         const bubble = document.createElement("div");
         bubble.classList.add("bubble");
@@ -1138,7 +1227,6 @@
         const duration = Math.random() * 4 + 3 + "s";
         bubble.style.animationDuration = duration;
         bubblesContainer.appendChild(bubble);
-
         setTimeout(() => {
           bubble.remove();
         }, parseFloat(duration) * 1000);
