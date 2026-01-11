@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Oila</title>
+    <title>Oila | Eco-Friendly Dishwashing Liquid</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
       rel="stylesheet"
@@ -195,7 +195,6 @@
         height: 100%;
       }
 
-      /* 3-BOTTLE LAYOUT STYLES */
       .product-image-container {
         position: relative;
         width: auto;
@@ -391,6 +390,22 @@
         z-index: 2;
       }
 
+      /* --- CERTIFICATION SECTION (NEW) --- */
+      #certification {
+        padding: var(--section-spacing) 0;
+        background-color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+      }
+
+      #certification p {
+        max-width: 800px;
+        margin: 0 auto 30px;
+        color: var(--color-text);
+        font-size: 1.1rem;
+      }
+
       /* --- MODAL STYLES --- */
       .modal {
         display: none;
@@ -555,7 +570,7 @@
         border: 0;
       }
 
-      /* --- FAQ SECTION (Fixed) --- */
+      /* --- FAQ SECTION --- */
       #faq {
         padding: var(--section-spacing) 0;
       }
@@ -600,7 +615,6 @@
         transform: rotate(45deg);
       }
 
-      /* Updated for smooth full text reveal */
       .faq-answer {
         max-height: 0;
         overflow: hidden;
@@ -649,7 +663,6 @@
         font-weight: 500;
       }
 
-      /* SVG Icon Styles */
       .icon-svg {
         width: 24px;
         height: 24px;
@@ -751,7 +764,6 @@
           padding-right: 0;
         }
 
-        /* Mobile Bottle Style: Single bottle */
         .product-image-container {
           display: block;
         }
@@ -854,21 +866,21 @@
         </div>
         <div class="hero-image-side">
           <div class="product-image-container">
-            <!-- <img
+            <img
               src="img/product.png"
               alt="Oila Dishwashing Liquid"
               class="hero-bottle-small"
-            /> -->
+            />
             <img
-              src="img/product-w-lemon.png"
+              src="img/product.png"
               alt="Oila Dishwashing Liquid"
               class="hero-bottle-main"
             />
-            <!-- <img
+            <img
               src="img/product.png"
               alt="Oila Dishwashing Liquid"
               class="hero-bottle-small"
-            /> -->
+            />
           </div>
         </div>
       </div>
@@ -922,6 +934,28 @@
               View Ingredients
             </button>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="certification">
+      <div class="container">
+        <div class="section-title hidden">
+          Chemist Certification & Quality Assurance
+        </div>
+        <div class="certification-content hidden">
+          <!-- <h3 style="color: var(--color-green-dark); margin-bottom: 15px">
+            Chemist Certification
+          </h3> -->
+          <p style="max-width: 700px; margin: 0 auto 30px">
+            This certificate confirms that Oila Dishwashing Liquid’s oil
+            handling and processing practices are reviewed and verified by a
+            licensed professional chemist. It ensures that our operations comply
+            with safety, quality, and environmental standards.
+          </p>
+          <a href="files/Certification.jpg" target="_blank" class="btn-cta"
+            >View Certificate</a
+          >
         </div>
       </div>
     </section>
@@ -1037,14 +1071,12 @@
         </p>
         <div class="map-wrapper hidden">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.7082441049574!2d121.00321207589641!3d14.558669578100293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c973c52fa56f%3A0xe899b20f3e85b0ab!2sCash%20%26%20Carry%20Mall!5e0!3m2!1sen!2sph!4v1767796972703!5m2!1sen!2sph"
-            width="600"
-            height="450"
-            style="border: 0"
+            src="maps.google.com/2"
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
+          >
+          </iframe>
         </div>
       </div>
     </section>
@@ -1165,7 +1197,7 @@
                   d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
                 ></path>
               </svg>
-              OILAOFFICIAL
+              /OILAMOFFICIAL
             </div>
             <div class="contact-item">
               <svg class="icon-svg" viewBox="0 0 24 24">
